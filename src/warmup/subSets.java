@@ -26,9 +26,9 @@ public class subSets {
     private void subSetsHelper(List<List<Integer>> result, List<Integer> list, int[] nums, int position) {
         result.add(new ArrayList<>(list));
         for (int i = position; i < nums.length; i++) {
-            if (i != position && nums[i] == nums[i - 1]) {
-                continue;
-            }
+//            if (i != position && nums[i] == nums[i - 1]) {
+//                continue;
+//            }
             list.add(nums[i]);
             subSetsHelper(result, list, nums, i + 1);
             list.remove(list.size() - 1);
