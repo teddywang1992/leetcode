@@ -12,7 +12,7 @@ public class twoSum {
         System.out.println(Arrays.toString(obj.twoSumFunctionHashMap(input, target)));
     }
 
-    public int[] twoSumFunctionSillyMethod(int[] input, int target) throws IllegalAccessException {
+    private int[] twoSumFunctionSillyMethod(int[] input, int target) throws IllegalAccessException {
         for (int i = 0; i < input.length; i++) {
             for (int j = input.length - 1; j > i; j--) {
                 if (input[i] + input[j] == target)
@@ -21,7 +21,7 @@ public class twoSum {
         }
         throw new IllegalArgumentException("No two sum solution");
     }
-    public int[] twoSumFunctionHashMap(int[] input, int target) throws IllegalAccessException {
+    private int[] twoSumFunctionHashMap(int[] input, int target) throws IllegalAccessException {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < input.length; i++) {
             map.put(input[i], i);
