@@ -6,7 +6,7 @@ import java.util.List;
 
 public class subSets {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
+        int[] nums = {1, 2, 2};
         subSets obj = new subSets();
         System.out.println(obj.subSetsFunction(nums));
 
@@ -26,6 +26,9 @@ public class subSets {
     private void subSetsHelper(List<List<Integer>> result, List<Integer> list, int[] nums, int position) {
         result.add(new ArrayList<>(list));
         for (int i = position; i < nums.length; i++) {
+            if (i != position && nums[i] == nums[i - 1]) {
+                continue;
+            }
             list.add(nums[i]);
             subSetsHelper(result, list, nums, i + 1);
             list.remove(list.size() - 1);
