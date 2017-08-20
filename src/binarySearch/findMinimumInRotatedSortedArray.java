@@ -2,13 +2,14 @@ package binarySearch;
 
 public class findMinimumInRotatedSortedArray {
     public static void main(String[] args) {
-        int[] test = {1,2,3};
+        int[] test;
+        test = new int[]{1,2,3};
         findMinimumInRotatedSortedArray obj = new findMinimumInRotatedSortedArray();
         System.out.println(obj.findMin(test));
 
     }
     private int findMin(int[] nums) {
-        if (nums.length == 0 || nums == null) {
+        if (nums.length == 0) {
             return -1;
         }
         int start = 0;
