@@ -1,15 +1,19 @@
 package tree;
 
-public class constantTree {
-    static TreeNode root1 = new TreeNode(3);
-    static TreeNode node1 = new TreeNode(5);
-    static TreeNode node2 = new TreeNode(8);
-    static TreeNode node3 = new TreeNode(7);
-    static TreeNode node4 = new TreeNode(6);
-    static TreeNode node5 = new TreeNode(2);
-    static TreeNode node6 = new TreeNode(4);
+/*        3
+       5    8
+     7  6  2  4
+*/
+class constantTree {
+    private static TreeNode root1 = new TreeNode(3);
+    private static TreeNode node1 = new TreeNode(5);
+    private static TreeNode node2 = new TreeNode(8);
+    private static TreeNode node3 = new TreeNode(7);
+    private static TreeNode node4 = new TreeNode(6);
+    private static TreeNode node5 = new TreeNode(2);
+    private static TreeNode node6 = new TreeNode(4);
 
-    public static TreeNode returnRoot() {
+    static TreeNode returnRoot() {
         root1.left = node1;
         root1.right = node2;
         node1.left = node3;
