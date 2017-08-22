@@ -7,6 +7,8 @@ package tree;
                      7   6   2   4
                               \
                                9
+                                \
+                                 10
 */
 class constantTree {
     private static TreeNode root1 = new TreeNode(3);
@@ -17,6 +19,7 @@ class constantTree {
     private static TreeNode node5 = new TreeNode(2);
     private static TreeNode node6 = new TreeNode(4);
     private static TreeNode node7 = new TreeNode(9);
+    private static TreeNode node8 = new TreeNode(10);
 
     static TreeNode returnRoot() {
         root1.left = node1;
@@ -34,7 +37,9 @@ class constantTree {
         node6.left = null;
         node6.right = null;
         node7.left = null;
-        node7.right = null;
+        node7.right = node8;
+        node8.left = null;
+        node8.right = null;
         return root1;
     }
     static TreeNode returnBalanceTree() {
