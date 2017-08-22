@@ -21,7 +21,7 @@ class constantTree {
     private static TreeNode node7 = new TreeNode(9);
     private static TreeNode node8 = new TreeNode(10);
 
-    static TreeNode returnRoot() {
+    public static TreeNode returnRoot() {
         root1.left = node1;
         root1.right = node2;
         node1.left = node3;
@@ -42,7 +42,7 @@ class constantTree {
         node8.right = null;
         return root1;
     }
-    static TreeNode returnBalanceTree() {
+    public static TreeNode returnBalanceTree() {
         root1.left = node1;
         root1.right = node2;
         node1.left = node3;
@@ -58,5 +58,29 @@ class constantTree {
         node6.left = null;
         node6.right = null;
         return node1;
+    }
+    public static TreeNode getNode1() {
+        return node1;
+    }
+    public static TreeNode getNode2() {
+        return node2;
+    }
+    public static TreeNode getNode3() {
+        return node3;
+    }
+    public static TreeNode getNode4() {
+        return node4;
+    }
+    public static TreeNode getNode5() {
+        return node5;
+    }
+    public static TreeNode getNode6() {
+        return node6;
+    }
+    public static TreeNode getNode7() {
+        return node7;
+    }
+    public static TreeNode getNode8() {
+        return node8;
     }
 }
