@@ -1,8 +1,12 @@
 package tree;
 
-/*        3
-       5    8
-     7  6  2  4
+/*                         3
+                        /     \
+                       5       8
+                      / \     / \
+                     7   6   2   4
+                              \
+                               9
 */
 class constantTree {
     private static TreeNode root1 = new TreeNode(3);
@@ -12,6 +16,7 @@ class constantTree {
     private static TreeNode node4 = new TreeNode(6);
     private static TreeNode node5 = new TreeNode(2);
     private static TreeNode node6 = new TreeNode(4);
+    private static TreeNode node7 = new TreeNode(9);
 
     static TreeNode returnRoot() {
         root1.left = node1;
