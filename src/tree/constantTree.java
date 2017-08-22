@@ -10,6 +10,16 @@ package tree;
                                 \
                                  10
 */
+
+/*
+                        _______7______
+                       /              \
+                    ___3__          ___9__
+                   /      \        /      \
+                   2      _5       8       10
+                         /  \
+                         4   6
+*/
 class constantTree {
     private static TreeNode root1 = new TreeNode(3);
     private static TreeNode node1 = new TreeNode(5);
@@ -20,6 +30,28 @@ class constantTree {
     private static TreeNode node6 = new TreeNode(4);
     private static TreeNode node7 = new TreeNode(9);
     private static TreeNode node8 = new TreeNode(10);
+
+    public static TreeNode returnBST() {
+        node6.left = null;
+        node6.right = null;
+        node4.left = null;
+        node4.right = null;
+        node5.left = null;
+        node5.right = null;
+        node2.left = null;
+        node2.right = null;
+        node8.left = null;
+        node8.right = null;
+        node3.left = root1;
+        node3.right = node7;
+        root1.left = node5;
+        root1.right = node1;
+        node7.left = node2;
+        node7.right = node8;
+        node1.left = node6;
+        node1.right = node4;
+        return node3;
+    }
 
     public static TreeNode returnRoot() {
         root1.left = node1;
