@@ -37,5 +37,21 @@ class constantTree {
         node7.right = null;
         return root1;
     }
-
+    static TreeNode returnBalanceTree() {
+        root1.left = node1;
+        root1.right = node2;
+        node1.left = node3;
+        node1.right = node4;
+        node2.left = node5;
+        node2.right = node6;
+        node3.left = null;
+        node3.right = null;
+        node4.left = null;
+        node4.right = null;
+        node5.left = null;
+        node5.right = null;
+        node6.left = null;
+        node6.right = null;
+        return node1;
+    }
 }
