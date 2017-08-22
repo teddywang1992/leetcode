@@ -30,9 +30,11 @@ class constantTree {
         node4.left = null;
         node4.right = null;
         node5.left = null;
-        node5.right = null;
+        node5.right = node7;
         node6.left = null;
         node6.right = null;
+        node7.left = null;
+        node7.right = null;
         return root1;
     }
 
