@@ -1,9 +1,9 @@
 package tree;
 
-class ResultType {
+class BalanceResultType {
     int maxDepth;
     boolean isBalanced;
-    ResultType(boolean balance, int depth) {
+    BalanceResultType(boolean balance, int depth) {
         maxDepth = depth;
         isBalanced = balance;
     }
@@ -20,21 +20,21 @@ public class balancedBinaryTree {
     private boolean isBalanceWithResultType (TreeNode root) {
         return isBalanceWithResultTypeHelper(root).isBalanced;
     }
-    private ResultType isBalanceWithResultTypeHelper(TreeNode root) {
+    private BalanceResultType isBalanceWithResultTypeHelper(TreeNode root) {
         if(root == null) {
-            return new ResultType(true, 0);
+            return new BalanceResultType(true, 0);
         }
 
-        ResultType left = isBalanceWithResultTypeHelper(root.left);
-        ResultType right = isBalanceWithResultTypeHelper(root.right);
+        BalanceResultType left = isBalanceWithResultTypeHelper(root.left);
+        BalanceResultType right = isBalanceWithResultTypeHelper(root.right);
 
         if(!left.isBalanced || !right.isBalanced) {
-            return new ResultType(false, -1);
+            return new BalanceResultType(false, -1);
         }
         if(Math.abs(left.maxDepth - right.maxDepth) > 1) {
-            return new ResultType(false, -1);
+            return new BalanceResultType(false, -1);
         }
-        return new ResultType(true, Math.max(left.maxDepth, right.maxDepth) + 1);
+        return new BalanceResultType(true, Math.max(left.maxDepth, right.maxDepth) + 1);
     }
     private boolean isBalanceWithoutResultType(TreeNode root) {
         return isBalanceWithoutResultTypeHelper(root) != -1;
