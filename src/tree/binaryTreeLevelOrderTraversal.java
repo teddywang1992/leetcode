@@ -9,10 +9,40 @@ public class binaryTreeLevelOrderTraversal {
     public static void main(String[] args) {
         binaryTreeLevelOrderTraversal obj = new binaryTreeLevelOrderTraversal();
         TreeNode root = constantTree.returnRoot();
-        System.out.println("level order is: " + obj.levelOrder(root));
+        System.out.println("level order is: " + obj.levelOrderDFS(root));
 
     }
-    private List<List<Integer>> levelOrder(TreeNode root) {
+    private List<List<Integer>> levelOrderDFS(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        int maxDepth = 0;
+        if(root == null) {
+            return result;
+        }
+
+        while(true) {
+            List<Integer> level = new ArrayList<>();
+            dfs(root, level, 0, maxDepth);
+            if(level.size() == 0) {
+                break;
+            }
+            maxDepth++;
+            result.add(level);
+        }
+        return result;
+    }
+    private void dfs(TreeNode root, List<Integer> level, int currentDepth, int maxDepth) {
+        if(root == null) {
+            return;
+        }
+        if(currentDepth == maxDepth) {
+            level.add(root.val);
+            return;
+        }
+
+        dfs(root.left, level, currentDepth + 1, maxDepth);
+        dfs(root.right, level, currentDepth + 1, maxDepth);
+    }
+    private List<List<Integer>> levelOrderBFS(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
 
