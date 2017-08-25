@@ -7,7 +7,7 @@ public class longestIncreasingSubsequence {
         System.out.println(" longest : " + obj.lengthOfLIS(test));
     }
     private int lengthOfLIS(int[] nums) {
-        if(nums.length == 0 || nums == null) {
+        if(nums.length == 0) {
             return 0;
         }
         //state
