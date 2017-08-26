@@ -41,12 +41,12 @@ public class wordBreak {
     2. In the second for loop. if f[i] is false, just skip it.
      */
     public boolean wordBreakGood(String s, List<String> wordDict) {
-        if(s == null || wordDict == null || wordDict.size() == 0) {
+        if (s == null || wordDict == null || wordDict.size() == 0) {
             return false;
         }
 
         int maxLength = 0;
-        for(String i : wordDict) {
+        for (String i : wordDict) {
             maxLength = Math.max(maxLength, i.length());
         }
 
@@ -58,18 +58,19 @@ public class wordBreak {
         f[0] = true;
 
         //top down
-        for(int i = 1; i <= n; i++) {
-            for(int j = 0; j <= i && j <= maxLength; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j <= i && j <= maxLength; j++) {
                 f[i] = false;
-                if(!f[i - j]) {
+                if (!f[i - j]) {
                     continue;
                 }
                 String word = s.substring(i - j, i);
-                if(wordDict.contains(word)) {
+                if (wordDict.contains(word)) {
                     f[i] = true;
                     break;
                 }
             }
         }
         return f[n];
+    }
 }
