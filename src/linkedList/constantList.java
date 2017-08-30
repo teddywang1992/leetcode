@@ -28,4 +28,17 @@ class constantList {
         node9.next = null;
         return head2;
     }
+    static ListNode returnRandomHead() {
+        head1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        node5.next = node6;
+        node6.next = node7;
+        node7.next = node8;
+        node8.next = node9;
+        node9.next = null;
+        return head1;
+
+    }
 }
