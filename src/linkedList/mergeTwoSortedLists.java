@@ -2,16 +2,15 @@ package linkedList;
 
 public class mergeTwoSortedLists {
     public static void main(String[] args) {
-        mergeTwoSortedLists obj = new mergeTwoSortedLists();
         ListNode head1 = constantList.returnNormalHead();
         ListNode head2 = constantList.returnNormalHead2();
-        ListNode result = obj.mergeTwoLists(head1, head2);
+        ListNode result = mergeTwoLists(head1, head2);
         while(result != null) {
             System.out.println(result.val);
             result = result.next;
         }
     }
-    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    private static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1 == null && l2 == null) {
             return null;
         }
