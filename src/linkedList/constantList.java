@@ -12,12 +12,27 @@ class constantList {
     private static ListNode node8 = new ListNode(7);
     private static ListNode node9 = new ListNode(9);
 
+    static ListNode reuturnCycleHead() {
+        head1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        node5.next = node6;
+        node6.next = node7;
+        node7.next = node5;
+        node8.next = node9;
+        node9.next = null;
+
+        return head1;
+    }
+
     static ListNode returnNormalHead() {
         head1.next = node2;
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
         node5.next = null;
+
         return head1;
     }
     static ListNode returnNormalHead2() {
@@ -26,6 +41,7 @@ class constantList {
         node7.next = node8;
         node8.next = node9;
         node9.next = null;
+
         return head2;
     }
     static ListNode returnRandomHead() {
@@ -38,7 +54,7 @@ class constantList {
         node7.next = node8;
         node8.next = node9;
         node9.next = null;
-        return head1;
 
+        return head1;
     }
 }
