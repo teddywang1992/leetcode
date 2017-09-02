@@ -9,7 +9,7 @@ public class twoSum {
         int[] input = {2, 7, 11, 15};
         int target = 9;
         twoSum obj = new twoSum();
-        System.out.println(Arrays.toString(obj.twoSumFunctionHashMap(input, target)));
+        System.out.println(Arrays.toString(obj.twoSumTwoPointers(input, target)));
     }
 
     private int[] twoSumFunctionSillyMethod(int[] input, int target) throws IllegalAccessException {
@@ -34,4 +34,27 @@ public class twoSum {
         }
         throw new IllegalArgumentException("no result");
     }
+
+    private int[] twoSumTwoPointers(int[] nums, int target) {
+        if(nums == null || nums.length == 0) {
+            return null;
+        }
+        int i = 0;
+        int j = nums.length - 1;
+        Arrays.sort(nums);
+        while(i < j) {
+            if(nums[i] + nums[j] > target) {
+                j--;
+            }
+            if(nums[i] + nums[j] < target) {
+                i++;
+            }
+            if(nums[i] + nums[j] == target) {
+                return new int[] {nums[i], nums[j]};
+            }
+        }
+        return null;
+    }
+
+
 }
