@@ -1,7 +1,7 @@
 package array;
 
 public class sortColors {
-    private void sortColors(int[] nums) {
+    private  void sortColors(int[] nums) {
         if(nums == null || nums.length == 0) {
             return;
         }
