@@ -22,6 +22,7 @@ public class permutations2 {
             return result;
         }
 
+        Arrays.sort(nums);
         boolean[] visited = new boolean[nums.length];
         Arrays.fill(visited, false);
         permuteUniqueHelper(result, list, visited, nums);
