@@ -6,6 +6,7 @@ public class addBinary {
         String b = "1";
         System.out.println(addBinary(a, b));
     }
+
     private static String addBinary(String a, String b) {
         String result = "";
         int carry = 0;
