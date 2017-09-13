@@ -3,6 +3,12 @@ package graph_BFS_DFS;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+use union find to implement this program.
+first add every point in array.
+when two parent is the same value just reduce the number.
+*/
+
 public class numberOfIslands2UnionFind {
     public static void main(String[] args) {
         int[][] positions = {{0,0}, {0,1}, {1,2}, {2,1}};
