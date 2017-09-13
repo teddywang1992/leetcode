@@ -76,11 +76,31 @@ class UnionFind{
     }
 
     public int find(int x) {
-        if (father[x] == x) {
-            return x;
+//        int parent = x;
+//        while (parent != father[parent]) {
+//            parent = father[parent];
+//        }
+//        return parent;
+
+        int parent = x;
+        while (parent != father[parent]) {
+            parent = father[parent];
         }
 
-        return father[x] = find(father[x]);
+        int next;
+
+        while (x != father[x]) {
+            next = father[x];
+            father[x] = parent;
+            x = next;
+        }
+        return parent;
+
+//        if (father[x] == x) {
+//            return x;
+//        }
+//
+//        return father[x] = find(father[x]);
     }
 
     public void union(int x, int y) {
