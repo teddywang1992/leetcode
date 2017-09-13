@@ -69,6 +69,7 @@ class UnionFind2 {
         }
 
         int next;
+        //set all x 长辈都变成最大的爷爷
         while (x != father[x]) {
             next = father[x];
             father[x] = parent;
