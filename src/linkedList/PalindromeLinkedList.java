@@ -1,5 +1,7 @@
 package linkedList;
 
+//
+//注意把回转的后边链表连接上并且只比较后半边链表
 public class PalindromeLinkedList {
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
