@@ -1,5 +1,10 @@
 package math;
 
+/*
+corner case Z
+进位时要先乘以进位数-1 然后再弄，先后顺序要先弄明白
+ */
+
 public class ExcelSheetColumnNumber {
     public int titleToNumber(String s) {
         if (s == null || s.length() == 0) {
