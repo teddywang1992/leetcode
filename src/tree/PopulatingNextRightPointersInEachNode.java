@@ -4,7 +4,7 @@ package tree;
 
 public class PopulatingNextRightPointersInEachNode {
 
-    public void connectTwoPointer(TreeLinkNode root) {
+    private void connectTwoPointer(TreeLinkNode root) {
         if (root == null) {
             return;
         }
