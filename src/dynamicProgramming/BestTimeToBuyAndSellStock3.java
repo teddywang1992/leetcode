@@ -1,22 +1,20 @@
 package dynamicProgramming;
 
 public class BestTimeToBuyAndSellStock3 {
-    public class Solution {
-        public int maxProfit(int[] prices) {
-            int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
+    public int maxProfit(int[] prices) {
+        int buy1 = Integer.MIN_VALUE;
+        int buy2 = Integer.MIN_VALUE;
+        // After selling, profit is impossible to be negative
+        int sell1 = 0;
+        int sell2 = 0;
 
-            // After selling, profit is impossible to be negative
-            int release1 = 0, release2 = 0;
-
-            for(int i: prices) {
-                release2 = Math.max(release2, hold2 + i);
-                hold2 = Math.max(hold2, release1 - i);
-                release1 = Math.max(release1, hold1 + i);
-                hold1 = Math.max(hold1, -i);
-
-            }
-
-            return release2;
+        for (int price : prices) {
+            sell2 = Math.max(sell2, buy2 + price);
+            buy2 = Math.max(buy2, sell1 - price);
+            sell1 = Math.max(sell1, buy1 + price);
+            buy1 = Math.max(buy1, - price);
         }
+
+        return sell2;
     }
 }
