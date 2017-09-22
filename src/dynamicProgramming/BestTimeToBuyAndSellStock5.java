@@ -1,20 +1,25 @@
 package dynamicProgramming;
 
+/*
+if the previous status is cooldown. the result doesn't change so we define two new variables for them.
+the one is preBuy. The other one is presell.
+*/
+
 public class BestTimeToBuyAndSellStock5 {
-    public class Solution {
-        public int maxProfit(int[] prices) {
-            int sell = 0, buy = Integer.MIN_VALUE, preSell = 0, preBuy;
+    public int maxProfit(int[] prices) {
+        int sell = 0;
+        int preSell = 0;
+        int buy = Integer.MIN_VALUE;
+        int preBuy = 0;
 
-            for (int price : prices) {
-                preBuy = buy;
-                buy = Math.max(preSell - price, preBuy);
+        for (int price : prices) {
+            preBuy = buy;
+            buy = Math.max(preBuy, preSell - price);
 
-                preSell = sell;
-                sell = Math.max(preBuy + price, preSell);
-            }
-
-            return sell;
-
+            preSell = sell;
+            sell = Math.max(preSell, preBuy + price);
         }
+
+        return sell;
     }
 }
