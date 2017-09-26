@@ -11,7 +11,6 @@ public class PostGetJSON {
     public static void main(String[] args) throws IOException, JSONException {
         JSONArray json = readJsonFromUrl("http://jsonplaceholder.typicode.com/users");
         System.out.println(json.toString());
-        System.out.println(json.);
     }
 
     public static JSONArray readJsonFromUrl(String url) throws IOException, JSONException {
