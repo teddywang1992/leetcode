@@ -3,6 +3,8 @@ package array;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
 public class MaximumSizeSubarraySumEqualsK {
     public int maxSubArrayLen(int[] nums, int k) {
         // if (nums == null || nums.length == 0) {
