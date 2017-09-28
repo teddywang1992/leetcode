@@ -17,8 +17,8 @@ public class BinaryTreeVerticalOrderTraversal {
         Queue<TreeNode> treeQueue = new LinkedList<>();
         Queue<Integer> levelQueue = new LinkedList<>();
         Map<Integer, List<Integer>> levelMap = new HashMap<>();
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
+        int max = 0;
+        int min = 0;
 
         treeQueue.offer(root);
         levelQueue.offer(0);
