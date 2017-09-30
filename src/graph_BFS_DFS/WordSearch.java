@@ -6,43 +6,24 @@ public class WordSearch {
             return false;
         }
 
-        boolean[][] isVisited = new boolean[board.length][board[0].length];
-
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; i++) {
-                if (board[i][j] == word.charAt(0) && helper(board, word,isVisited, 0, i, j)) {
-                    return true;
-                }
+            for (int j = 0; j < board[0].length; j++) {
+                if (dfs(board, word, 0, i, j)) return true;
             }
         }
 
         return false;
     }
 
-    private boolean helper(char[][] board, String word, boolean[][] isVisited, int index, int i, int j) {
-        if (index == word.length()) {
-            return true;
-        }
-
-        if (i < 0 || i > board.length || j < 0 || j > board[0].length || isVisited[i][j] || board[i][j] != word.charAt(index)) {
-            return false;
-        }
-
-        isVisited[i][j] = true;
-        if (helper(board, word, isVisited, index + 1, i + 1, j)) {
-            return true;
-        }
-        if (helper(board, word, isVisited, index + 1, i - 1, j)) {
-            return true;
-        }
-        if (helper(board, word, isVisited, index + 1, i, j + 1)) {
-            return true;
-        }
-        if (helper(board, word, isVisited, index + 1, i, j - 1)) {
-            return true;
-        }
-        isVisited[i][j] = false;
-
-        return false;
+    private boolean dfs(char[][] board, String word, int index, int i, int j) {
+        if (index == word.length()) return true;
+        if (i < 0 || j < 0 || i >= board.length || j >= board[0].length || board[i][j] != word.charAt(index)) return false;
+        board[i][j] = '#';
+        boolean result = (dfs(board, word, index + 1, i + 1, j)
+                || dfs(board, word, index + 1, i - 1, j)
+                || dfs(board, word, index + 1, i, j + 1)
+                || dfs(board, word, index + 1, i, j - 1));
+        board[i][j] = word.charAt(index);
+        return result;
     }
 }
