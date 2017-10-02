@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ContinuousSubarraySum {
+    public static void main(String[] args) {
+        String temp = "PORT:AXN,0,10;BGT,20,30;CXZ,10,30|BENCH:AXN,50,10;BGT,30,30;DFG,30,20;XYZ,0,10";
+        String[] types = temp.split("\\|");
+        System.out.println(types.length);
+    }
     public boolean checkSubarraySum(int[] nums, int k) {
         int runningSum = 0;
         Map<Integer, Integer> map = new HashMap<>();
