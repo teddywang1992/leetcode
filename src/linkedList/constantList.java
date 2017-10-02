@@ -1,6 +1,6 @@
 package linkedList;
 
-class constantList {
+public class constantList {
     private static ListNode head1 = new ListNode(1);
     private static ListNode node2 = new ListNode(1);
     private static ListNode node3 = new ListNode(2);
@@ -12,7 +12,7 @@ class constantList {
     private static ListNode node8 = new ListNode(7);
     private static ListNode node9 = new ListNode(9);
 
-    static ListNode reuturnCycleHead() {
+    public static ListNode reuturnCycleHead() {
         head1.next = node2;
         node2.next = node3;
         node3.next = node4;
@@ -26,7 +26,7 @@ class constantList {
         return head1;
     }
 
-    static ListNode returnNormalHead() {
+    public static ListNode returnNormalHead() {
         head1.next = node2;
         node2.next = node3;
         node3.next = node4;
@@ -35,7 +35,7 @@ class constantList {
 
         return head1;
     }
-    static ListNode returnNormalHead2() {
+    public static ListNode returnNormalHead2() {
         head2.next = node6;
         node6.next = node7;
         node7.next = node8;
@@ -44,7 +44,7 @@ class constantList {
 
         return head2;
     }
-    static ListNode returnRandomHead() {
+    public static ListNode returnRandomHead() {
         head1.next = node2;
         node2.next = node3;
         node3.next = node4;
