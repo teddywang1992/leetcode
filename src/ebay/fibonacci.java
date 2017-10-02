@@ -1,5 +1,7 @@
 package ebay;
 
+//斐波那契数列
+
 public class fibonacci {
     public static void main(String[] args) {
         int n = 9;

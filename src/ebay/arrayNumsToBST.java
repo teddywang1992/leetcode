@@ -1,6 +1,8 @@
 package ebay;
 import tree.TreeNode;
 
+//给了一个array num , 让转化成BST
+
 public class arrayNumsToBST {
     public TreeNode sortedArrayToBST(int[] nums) {
         if (nums == null || nums.length == 0) return null;

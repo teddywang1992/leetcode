@@ -2,6 +2,8 @@ package ebay;
 
 import java.util.Random;
 
+//shuffle an array
+
 public class ShuffleAnArray {
     int[] nums;
     Random random;
