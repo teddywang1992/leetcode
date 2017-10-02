@@ -10,14 +10,24 @@ import linkedList.constantList;
 public class swapPairInLinkedList {
     public static void main(String[] args) {
         ListNode head = constantList.returnNormalHead();
-        ListNode result = swapPairs(head);
+        ListNode result = swapPairs2(head);
         while (result != null) {
             System.out.println(result.val);
             result = result.next;
         }
     }
 
-    private static ListNode swapPairs(ListNode head) {
+    public ListNode swapPairs1(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode temp = head.next;
+        head.next = swapPairs1(head.next.next);
+        temp.next = head;
+
+        return temp;
+    }
+
+    private static ListNode swapPairs2(ListNode head) {
         ListNode dummy = new ListNode(0);
         ListNode pre = dummy;
         dummy.next = head;
