@@ -52,8 +52,7 @@ public class SerializeAndDeBT {
                 queue.offer(right);
                 cur.right = right;
             }
-
-            return root;
         }
+        return root;
     }
 }
