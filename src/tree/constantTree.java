@@ -20,7 +20,7 @@ package tree;
                          /  \
                          4   6
 */
-class constantTree {
+public class constantTree {
     private static TreeNode root1 = new TreeNode(3);
     private static TreeNode node1 = new TreeNode(5);
     private static TreeNode node2 = new TreeNode(8);
