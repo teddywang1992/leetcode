@@ -6,9 +6,11 @@ import tree.constantTree;
 import static tree.constantTree.node7;
 
 public class CloseNode {
+    private TreeNode result;
+
     public static void main(String[] args) {
         TreeNode root = constantTree.returnRoot();
-        System.out.println(closest(root, node7));
+        System.out.println(getCloseNode(root, node7));
     }
 
     private static int getCloseNode(TreeNode root, TreeNode k){
@@ -55,21 +57,21 @@ public class CloseNode {
 
 
 
-    public static int closest(TreeNode root, TreeNode target){
-        int[] closest = {Integer.MAX_VALUE};
-        dfs(root, target, closest);
-        return closest[0];
-    }
-
-    private static void dfs(TreeNode root, TreeNode target, int[] closest){
-        if(root == null){
-            return;
-        }
-        if(root.left == null && root.right == null){
-            closest[0] = Math.abs(root.val - target.val) < Math.abs(closest[0] - target.val) ? root.val : closest[0];
-        }
-        dfs(root.left, target, closest);
-        dfs(root.right, target, closest);
-    }
+//    public static int closest(TreeNode root, TreeNode target){
+//        int[] closest = {Integer.MAX_VALUE};
+//        dfs(root, target, closest);
+//        return closest[0];
+//    }
+//
+//    private static void dfs(TreeNode root, TreeNode target, int[] closest){
+//        if(root == null){
+//            return;
+//        }
+//        if(root.left == null && root.right == null){
+//            closest[0] = Math.abs(root.val - target.val) < Math.abs(closest[0] - target.val) ? root.val : closest[0];
+//        }
+//        dfs(root.left, target, closest);
+//        dfs(root.right, target, closest);
+//    }
 }
 
