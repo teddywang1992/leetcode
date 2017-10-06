@@ -1,6 +1,5 @@
 package databricks;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +20,9 @@ public class SQL {
         boolean unpairedSingleQuotation = false;
 
         while (end < s.length()) {
+            if(s.charAt(end) == '\\'){
+                end += 2;
+            }
             if (s.charAt(end) == '"') {
                 unpairedQuotation = !unpairedQuotation;
             }
