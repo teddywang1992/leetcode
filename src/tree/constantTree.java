@@ -21,15 +21,15 @@ package tree;
                          4   6
 */
 public class constantTree {
-    private static TreeNode root1 = new TreeNode(3);
-    private static TreeNode node1 = new TreeNode(5);
-    private static TreeNode node2 = new TreeNode(8);
-    private static TreeNode node3 = new TreeNode(7);
-    private static TreeNode node4 = new TreeNode(6);
-    private static TreeNode node5 = new TreeNode(2);
-    private static TreeNode node6 = new TreeNode(4);
-    private static TreeNode node7 = new TreeNode(9);
-    private static TreeNode node8 = new TreeNode(10);
+    public static TreeNode root1 = new TreeNode(3);
+    public static TreeNode node1 = new TreeNode(5);
+    public static TreeNode node2 = new TreeNode(8);
+    public static TreeNode node3 = new TreeNode(7);
+    public static TreeNode node4 = new TreeNode(6);
+    public static TreeNode node5 = new TreeNode(2);
+    public static TreeNode node6 = new TreeNode(4);
+    public static TreeNode node7 = new TreeNode(9);
+    public static TreeNode node8 = new TreeNode(10);
 
     public static TreeNode returnBST() {
         node6.left = null;
