@@ -1,4 +1,4 @@
-package facebook;
+package facebook1;
 
 public class IntegerToEnglishWords {
     private static final String[] LESS_TWENTY = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",

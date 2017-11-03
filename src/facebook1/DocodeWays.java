@@ -1,4 +1,4 @@
-package facebook;
+package facebook1;
 
 public class DocodeWays {
     public int numDecodings(String s) {

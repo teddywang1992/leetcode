@@ -1,4 +1,4 @@
-package facebook;
+package facebook1;
 
 public class SparseMatrixMultiplication {
     public int[][] multiply(int[][] A, int[][] B) {
