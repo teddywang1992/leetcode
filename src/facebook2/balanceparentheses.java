@@ -27,20 +27,20 @@ public class balanceparentheses {
 //    http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=192179&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26searchoption%5B3090%5D%5Bvalue%5D%3D1%26searchoption%5B3090%5D%5Btype%5D%3Dradio%26searchoption%5B3046%5D%5Bvalue%5D%3D2%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D311
 
 // Use two loop to do this. First loop traverse from left to right, use a counter to count the valid
-// parenthese, meet '(' +1, meet ')' if count > 0 -1, else delete this ')'
+// parentheses, meet '(' +1, meet ')' if count > 0 -1, else delete this ')'
 // then all the invalid ')' will be deleted
-// Second loop traverse from right to left. also use a counter to count valid parenthese
+// Second loop traverse from right to left. also use a counter to count valid parentheses
 // meet ')' +1....
 // Then all the invalid '(' will be deleted.
 //            'Time complexity: O(n), space complexity: O(n)'
     class balanceParentheses {
         public String findBalanceParentheses(String input) {
-            String result = deleteCloseParenthes(input);
-            result = deleteOpenParenthes(result);
+            String result = deleteCloseParentheses(input);
+            result = deleteOpenParentheses(result);
             return result;
         }
 
-        private String deleteCloseParenthes(String input) {
+        private String deleteCloseParentheses(String input) {
             int count = 0;
             StringBuilder result = new StringBuilder();
             for (char letter : input.toCharArray()) {
@@ -60,7 +60,7 @@ public class balanceparentheses {
             return result.toString();
         }
 
-        private String deleteOpenParenthes(String input) {
+        private String deleteOpenParentheses(String input) {
             int count = 0;
             StringBuilder result = new StringBuilder();
             for (int i = input.length() - 1; i >= 0; i--) {
