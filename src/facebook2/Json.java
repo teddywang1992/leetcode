@@ -98,13 +98,13 @@ public class Json {
         return lastIndex;
     }
 
-    private int findParentheses(String str, char parenthese) {
+    private int findParentheses(String str, char parentheses) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == parenthese) {
+            if (str.charAt(i) == parentheses) {
                 count++;
             }
-            else if (str.charAt(i) == parentheses.get(parenthese)) {
+            else if (str.charAt(i) == this.parentheses.get(parentheses)) {
                 count--;
             }
             if (count < 0) {
