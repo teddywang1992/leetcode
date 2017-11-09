@@ -15,7 +15,7 @@ public class MinimumCoverInterval {
 //        Given A=[[0,3],[4,7]] B=[0,6] return 0 since we cannot find any interval combination from A to cover the B
 
 // make sure every time we choose one interval we cover more time
-// every time we chooes one, make the start time as its end time
+// every time we choose one, make the start time as its end time
 // Always choose the interval that whose end time is the biggest
 // and start time is smaller or equal to current start time
 // util we got the end time bigger than input.end
