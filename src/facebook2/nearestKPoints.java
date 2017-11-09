@@ -88,12 +88,7 @@ public class nearestKPoints {
             throw new IllegalArgumentException("K's value is illegal.\n");
         }
         List<Point> result = new ArrayList<>();
-        PriorityQueue<Point> maxPoints = new PriorityQueue<>(k, new Comparator<Point>() {
-            @Override
-            public int compare(Point poi1, Point poi2) {
-                return distance(poi2) - distance(poi1);
-            }
-        });
+        PriorityQueue<Point> maxPoints = new PriorityQueue<>(k, (poi1, poi2) -> distance(poi2) - distance(poi1));
         for (Point point : points) {
             if (maxPoints.size() < k) {
                 maxPoints.add(point);
