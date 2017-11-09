@@ -2,7 +2,7 @@ package facebook2;
 
 public class CheckSmile {
 //    input could include ":(" frown or ":)" smileys
-//    check if the input is parenthese balance
+//    check if the input is parentheses balance
     class CheckBalanced {
         public boolean check(String message) {
             int closeParenth = 0;
