@@ -21,8 +21,17 @@ public class MinimumCoverInterval {
 // util we got the end time bigger than input.end
 
 //        'time complexity: O(nlgn)'
+    public static void main(String[] args) {
+        Interval a1 = new Interval(0,2);
+        Interval a2 = new Interval(1,3);
+        Interval a3 = new Interval(2,6);
+        Interval a4 = new Interval(0,7);
+        Interval b1 = new Interval(0,6);
+        Interval[] intervals = new Interval[]{a1,a2,a3,a4};
+        System.out.println(findCover(intervals,b1));
+    }
 
-    public int findCover(Interval[] intervals, Interval interval) {
+    public static int findCover(Interval[] intervals, Interval interval) {
         Arrays.sort(intervals, (inter1, inter2) -> {
             if (inter1.start == inter2.start) {
                 return inter1.end - inter2.end;
