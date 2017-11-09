@@ -5,8 +5,8 @@ public class CheckSmile {
 //    check if the input is parentheses balance
     class CheckBalanced {
         public boolean check(String message) {
-            int closeParenth = 0;
-            int openParenth = 0;
+            int closeParentheses = 0;
+            int openParentheses = 0;
             int smileys = 0;
             int frowns = 0;
             boolean isPotentialEmotion = false;
@@ -15,20 +15,20 @@ public class CheckSmile {
                     if (isPotentialEmotion) {
                         frowns++;
                     }
-                    openParenth++;
+                    openParentheses++;
                 }
                 else if (letter == ')') {
                     if (isPotentialEmotion) {
                         smileys++;
                     }
-                    closeParenth++;
+                    closeParentheses++;
                 }
-                if (closeParenth > openParenth) {
-                    if (closeParenth - smileys > openParenth) {
+                if (closeParentheses > openParentheses) {
+                    if (closeParentheses - smileys > openParentheses) {
                         return false;
                     }
-                    closeParenth = openParenth;
-                    smileys = smileys - (closeParenth - openParenth);
+                    closeParentheses = openParentheses;
+                    smileys = smileys - (closeParentheses - openParentheses);
                 }
                 if (letter == ':') {
                     isPotentialEmotion = true;
@@ -37,7 +37,7 @@ public class CheckSmile {
                     isPotentialEmotion = false;
                 }
             }
-            if (openParenth - frowns > closeParenth) {
+            if (openParentheses - frowns > closeParentheses) {
                 return false;
             }
             return true;
