@@ -3,13 +3,13 @@ package facebook2;
 import java.util.*;
 
 public class MutualFriend {
-//    find 2nd mutal friend
+//    find 2nd mutual friend
 
     class MutalFriend {
         public List<GraphNode> findMutalFriends(GraphNode me) {
             Queue<GraphNode> explore = new LinkedList<>();
             Set<GraphNode> friends = new HashSet<>();
-            HashMap<GraphNode, Integer> mutalToCount = new HashMap<>();
+            HashMap<GraphNode, Integer> mutualToCount = new HashMap<>();
             int level = 0;
             explore.offer(me);
             friends.add(me);
@@ -27,21 +27,21 @@ public class MutualFriend {
                         if (friends.contains(friend)) {
                             continue;
                         }
-                        if (!mutalToCount.containsKey(friend)) {
-                            mutalToCount.put(friend, 1);
+                        if (!mutualToCount.containsKey(friend)) {
+                            mutualToCount.put(friend, 1);
                         }
                         else {
-                            mutalToCount.put(friend, mutalToCount.get(friend) + 1);
+                            mutualToCount.put(friend, mutualToCount.get(friend) + 1);
                         }
                     }
 
                 }
             }
             List<GraphNode> result = new ArrayList<>();
-            for (GraphNode node : mutalToCount.keySet()) {
+            for (GraphNode node : mutualToCount.keySet()) {
                 result.add(node);
             }
-            Collections.sort(result, new NodeComparator(mutalToCount));
+            Collections.sort(result, new NodeComparator(mutualToCount));
             return result;
         }
         class NodeComparator implements Comparator<GraphNode> {
