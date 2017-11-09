@@ -15,8 +15,8 @@ public class LongestConsecutive {
             if (map.containsKey(num)) {
                 continue;
             }
-            int left = map.containsKey(num - 1) ? map.get(num - 1) : 0;
-            int right = map.containsKey(num + 1) ? map.get(num + 1) : 0;
+            int left = map.getOrDefault(num - 1, 0);
+            int right = map.getOrDefault(num + 1, 0);
             int len = left + right + 1;
             map.put(num, len);
             map.put(num - left, len);
