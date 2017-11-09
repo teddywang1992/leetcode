@@ -97,8 +97,8 @@ public class FindPath {
                             while (Math.abs(tempY) > 0) {
                                 Point2 check = new Point2(point.x, point.y + tempY);
                                 Point2 check2 = new Point2(nextX, point.y + tempY - 1);
-                                canReach1 = blocks.contains(check) ? false : canReach1;
-                                canReach2 = blocks.contains(check2) ? false : canReach2;
+                                canReach1 = !blocks.contains(check) && canReach1;
+                                canReach2 = !blocks.contains(check2) && canReach2;
                                 tempY = tempY > 0 ? tempY - 1 : tempY + 1;
                             }
                         }
@@ -107,8 +107,8 @@ public class FindPath {
                             while (Math.abs(tempX) > 0) {
                                 Point2 check = new Point2(point.x + tempX, point.y);
                                 Point2 check2 = new Point2(point.x + tempX - 1, nextY);
-                                canReach1 = blocks.contains(check) ? false : canReach1;
-                                canReach2 = blocks.contains(check2) ? false : canReach2;
+                                canReach1 = !blocks.contains(check) && canReach1;
+                                canReach2 = !blocks.contains(check2) && canReach2;
                                 tempX = tempX > 0 ? tempX - 1 : tempX + 1;
                             }
                         }
