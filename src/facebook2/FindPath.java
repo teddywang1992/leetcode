@@ -6,7 +6,7 @@ public class FindPath {
 
 
 
-//7. 一骑士在一个无限大的国际象棋棋盘，有障碍. 骑士行走模式:https://en.wikipedia.org/wiki/Knight_(chess)basic: bfs
+//7. 一骑士在一个无限大的国际象棋棋盘，有障碍. 骑士行走模式: basic: bfs
 //    calculate the shortest path to some target.
 //    basic code: bfs. more info on 1point3acres.com
 //    follow up:
