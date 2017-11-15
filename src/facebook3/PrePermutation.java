@@ -11,7 +11,7 @@ public class PrePermutation {
 
     public static void prePermutation(int[] nums) {
         if (nums == null || nums.length == 0) return;
-        int i, j;
+        int i = 0, j = 0;
         for (i = nums.length - 2; i >= 0; i--) {
             if (nums[i+1] < nums[i]) {
                 for (j = nums.length - 1; j >= i; j--) {
