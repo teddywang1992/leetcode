@@ -1,6 +1,6 @@
 package facebook3;
 
-public class numberofisland {
+public class NumberOfIsland {
     public int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0) return 0;
         int count = 0;

@@ -1,6 +1,6 @@
 package facebook3;
 
-public class read4 {
+public class Read4 {
 //    public int read(char[] buf, int n) {
 //        int i = 0;
 //        while (i < n) {

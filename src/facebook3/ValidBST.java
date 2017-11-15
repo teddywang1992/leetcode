@@ -4,7 +4,7 @@ import tree.TreeNode;
 
 import java.util.Stack;
 
-public class validBST {
+public class ValidBST {
     public boolean isValidBST(TreeNode root) {
         return helper(root, Long.MIN_VALUE, Long. MAX_VALUE);
     }

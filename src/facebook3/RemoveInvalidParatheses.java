@@ -3,7 +3,7 @@ package facebook3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class removeInvalidParatheses {
+public class RemoveInvalidParatheses {
     public List<String> removeInvalidParentheses(String s) {
         List<String> result = new ArrayList<>();
         helper(result, s, 0, 0, new char[]{'(', ')'});

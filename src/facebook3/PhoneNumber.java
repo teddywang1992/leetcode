@@ -1,7 +1,7 @@
 package facebook3;
 import java.util.*;
 
-public class phonenumber {
+public class PhoneNumber {
     String[] map = new String[]{"", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     public List<String> letterCombinations(String digits) {
         if (digits == null || digits.length() == 0) return new ArrayList<>();

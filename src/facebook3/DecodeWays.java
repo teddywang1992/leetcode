@@ -1,6 +1,6 @@
 package facebook3;
 
-public class decodeWays {
+public class DecodeWays {
     public int numDecodings(String s) {
         if (s == null || s.length() == 0) return 0;
         int length = s.length();
