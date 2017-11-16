@@ -1,4 +1,4 @@
-//package facebook1;
+package facebook1;//package facebook1;
 //
 //import tree.TreeNode;
 //
@@ -2544,47 +2544,9 @@
 //
 //        Tree To Double linked list:
 //
-//class TreeToDoubleLinkedList {
-//    public DoubleLinkedList toDoubleLinkedList(TreeNode root) {
-//        if (root == null) {
-//            return null;
-//        }
-//        Stack<TreeNode> inorder = new Stack<>();
-//        DoubleLinkedList fakeHead = new DoubleLinkedList(0);
-//        DoubleLinkedList previous = fakeHead;
-//        toLeft(inorder, root);
-//        while (!inorder.isEmpty()) {
-//            TreeNode node = inorder.pop();
-//            DoubleLinkedList curNode = new DoubleLinkedList(node.val);
-//            curNode.pre = previous;
-//            previous.next = curNode;
-//            previous = curNode;
-//            if (node.right != null) {
-//                toLeft(inorder, node.right);
-//            }
-//        }
-//        DoubleLinkedList head = fakeHead.next;
-//        head.pre = previous;
-//        previous.next = head;
-//        return head;
-//    }
-//
-//    private void toLeft(Stack<TreeNode> inorder, TreeNode root) {
-//        while (root != null) {
-//            inorder.push(root);
-//            root = root.left;
-//        }
-//    }
-//}
-//
-//class DoubleLinkedList {
-//    DoubleLinkedList pre;
-//    DoubleLinkedList next;
-//    int val;
-//    public DoubleLinkedList(int val) {
-//        this.val = val;
-//    }
-//}
+
+import java.util.HashMap;
+
 //
 //#add operation
 //class AddOperator {
@@ -3672,7 +3634,7 @@
 //
 //        1. remove duplicate characters in a string. ex "abcba", return "c".
 //
-//class RemoveDuplicate {
+//class RemoveDuplicate11 {
 //    public String remove(String input) {
 //        HashMap<Character, Integer> charToIndex = new HashMap<>();
 //        Character[] result = new Character[input.length()];
@@ -3684,8 +3646,7 @@
 //                    result[index] = null;
 //                    charToIndex.put(letter, -1);
 //                }
-//            }
-//            else {
+//            } else {
 //                result[i] = letter;
 //                charToIndex.put(letter, i);
 //            }
@@ -3698,6 +3659,7 @@
 //        }
 //        return output.toString();
 //    }
+//}
 //}
 //
 //
