@@ -8,7 +8,7 @@ public class binaryTreePaths {
         TreeNode root = constantTree.returnRoot();
         System.out.println(binaryTreePathsFunction(root));
     }
-    private static List<String> binaryTreePathsFunction(TreeNode root) {
+    public static List<String> binaryTreePathsFunction(TreeNode root) {
         List<String> result = new ArrayList<>();
 
         if (root == null) {
