@@ -1,4 +1,4 @@
-package facebook3;
+package FacebookInterview;
 
 public class TrappingRainWater {
     public int trap1(int[] height) {

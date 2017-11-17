@@ -1,4 +1,4 @@
-package facebook3;
+package FacebookInterview;
 
 public class MaxSumOf3NonOverlapSubarray {
     public static void main(String[] args) {

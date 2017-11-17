@@ -1,4 +1,4 @@
-package facebook3;
+package FacebookInterview;
 
 public class TicTacToe {
     int[] rowVal, colVal;
