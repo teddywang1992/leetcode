@@ -71,5 +71,70 @@ public class WordLadderII {
         return 0;
     }
 
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+        List<List<String>> res = new ArrayList<>();
+        if(beginWord == null || endWord == null || wordList == null){
+            return res;
+        }
+        Set<String> wordSet = new HashSet<>();
+        wordSet.addAll(wordList);
+        Map<String, Integer> stepMap = new HashMap<>();
+        Map<String, List<String>> prevMap = new HashMap<>();
+        for(String word: wordList){
+            stepMap.put(word, Integer.MAX_VALUE);
+        }
+        int minStep = Integer.MAX_VALUE;
+        Queue<String> q = new LinkedList<>();
+        q.add(beginWord);
+        stepMap.put(beginWord, 1);
+        //BFS: Dijisktra search
+        while(!q.isEmpty()){
+            String word = q.poll();
+            int step = stepMap.get(word) + 1;//'step' indicates how many steps are needed to travel to one word.
+            if(step > minStep){
+                break;
+            }
+            for(int i = 0; i < word.length(); i++){
+                StringBuilder sb = new StringBuilder(word);
+                for(char c = 'a'; c <= 'z'; c++){
+                    sb.setCharAt(i, c);
+                    String newWord = sb.toString();
+                    if(wordSet.contains(newWord)){
+                        if(stepMap.get(newWord) < step){//Check if it is the shortest path to one word.
+                            continue;
+                        }
+                        else if(stepMap.get(newWord) > step){
+                            stepMap.put(newWord, step);
+                            q.add(newWord);
+                        }// It is a KEY line. If one word already appeared in one ladder,
+                        // Do not insert the same word inside the queue twice. Otherwise it gets TLE.
+                        prevMap.putIfAbsent(newWord, new ArrayList<>());
+                        prevMap.get(newWord).add(word);
+                        if(newWord.equals(endWord)){
+                            minStep = step;
+                        }
+                    }
+                }
+            }
+        }
+        //back tracing
+        backTrace(res, new ArrayList<>(), prevMap, beginWord, endWord);
+        return res;
+    }
 
+    private void backTrace(List<List<String>> res, List<String> list, Map<String, List<String>> prevMap, String beginWord, String endWord){
+        if(beginWord.equals(endWord)){
+            list.add(0, beginWord);
+            res.add(new ArrayList<>(list));
+            list.remove(0);
+            return;
+        }
+        list.add(0, endWord);
+        if(prevMap.containsKey(endWord)){
+            for(String prev: prevMap.get(endWord)){
+                backTrace(res, list, prevMap, beginWord, prev);
+            }
+        }
+        list.remove(0);
+    }
 }
