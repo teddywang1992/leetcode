@@ -2,7 +2,7 @@ package FacebookInterview;
 
 public class CompressString {
     public static void main(String[] args) {
-        String s = "a";
+        String s = "aaabbbbbaaddd";
         System.out.println(compress(s));
     }
 
