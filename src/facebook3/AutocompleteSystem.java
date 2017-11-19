@@ -7,8 +7,8 @@ public class AutocompleteSystem {
         Map<String, Integer> counts;
         boolean isWord;
         public TrieNode() {
-            children = new HashMap<Character, TrieNode>();
-            counts = new HashMap<String, Integer>();
+            children = new HashMap<>();
+            counts = new HashMap<>();
             isWord = false;
         }
     }
@@ -52,7 +52,7 @@ public class AutocompleteSystem {
         if (c == '#') {
             add(prefix, 1);
             prefix = "";
-            return new ArrayList<String>();
+            return new ArrayList<>();
         }
 
         prefix = prefix + c;
@@ -60,7 +60,7 @@ public class AutocompleteSystem {
         for (char cc : prefix.toCharArray()) {
             TrieNode next = curr.children.get(cc);
             if (next == null) {
-                return new ArrayList<String>();
+                return new ArrayList<>();
             }
             curr = next;
         }
@@ -70,7 +70,7 @@ public class AutocompleteSystem {
             pq.add(new Pair(s, curr.counts.get(s)));
         }
 
-        List<String> res = new ArrayList<String>();
+        List<String> res = new ArrayList<>();
         for (int i = 0; i < 3 && !pq.isEmpty(); i++) {
             res.add(pq.poll().s);
         }
