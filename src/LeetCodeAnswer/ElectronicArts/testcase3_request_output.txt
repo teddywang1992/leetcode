@@ -1,0 +1,3 @@
+text:(file=testcase3_input.cvs,schema=<date:string,game:string,platform:string,active_users_count:int,new_users_count:int,retained_users_count:int,churned_users_count:int>)?_dimensions=game&_metrics=sum(active_users_count),sum(new_users_count)&platform=ps4,xbox_one&_sort=game&_format=json
+
+[["GAME1",14318703,163965],["GAME2",4494061,91053]]
